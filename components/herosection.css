@@ -1,0 +1,131 @@
+
+.passhide-container {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 25px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.passhide-container h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #1d4ed8;
+}
+
+.passhide-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.passhide-form input[type="text"],
+.passhide-form input[type="password"] {
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.passhide-form input:focus {
+  outline: none;
+  border-color: #1d4ed8;
+  box-shadow: 0 0 5px rgba(29, 78, 216, 0.4);
+}
+
+.slider-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.slider-container input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.button-group > .generate-btn {
+  flex:1
+}
+.button-group > .save-btn {
+  flex:1
+}
+
+.btn {
+  padding: 8px 15px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.toggle-btn {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.toggle-btn:hover {
+  background-color: #2563eb;
+}
+
+.generate-btn {
+  background-color: #10b981;
+  color: white;
+}
+
+.generate-btn:hover {
+  background-color: #059669;
+}
+
+.save-btn {
+  background-color: #f59e0b;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #d97706;
+}
+
+.logout-btn {
+  width: 100%;
+  margin-top: 15px;
+  background-color: #ef4444;
+  color: white;
+  padding: 10px 0;
+}
+
+
+.message {
+  margin-top: 15px;
+  font-weight: 500;
+  text-align: center;
+  color: #1d4ed8;
+}
+
+.showbtn{
+  display:flex;
+  justify-content: space-between;
+  gap:8px;
+}
+
+.showbtn > input{
+  flex:3
+}
+
+.showbtn > button{
+  flex:1
+}

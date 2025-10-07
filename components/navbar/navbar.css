@@ -1,0 +1,51 @@
+.container{
+    height: 59px;
+    padding: 0px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007bff;
+    color: white;
+    font-size: 22px;
+}
+
+
+.logout {
+    padding: 9px 17px;
+    border-radius: 7px;
+    background-color: #b84575;
+    border: none;
+    color: white;
+    font-size: 16px;
+}
+
+.logout:hover {
+  background-color: #630000;
+}
+
+.logo{
+    text-decoration: none;
+    color:white;
+}
+
+.vault-logout{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:20px;
+}
+
+.vault {
+    padding: 8px 18px;
+    border-radius: 7px;
+    background-color: #10452a;
+    border: none;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.vault:hover{
+    background-color: #39a76e;
+    color:black;
+}
