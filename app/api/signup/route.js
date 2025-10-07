@@ -1,11 +1,11 @@
-import { connectDB } from "@/lib/db";
 import User from "@/Schema/signup";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import mongoose from 'mongoose'
 
 export async function POST(req) {
   try {
-    await connectDB();
+    await mongoose.connect(process.env.MONGO_URI);
     const { email, password, confirmPassword } = await req.json();
 
     if (!email || !password || !confirmPassword) {
