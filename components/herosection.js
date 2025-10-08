@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import "./herosection.css";
+import styles from "./herosection.module.css";
 
 const Herosection = () => {
   const [title, setTitle] = useState("");
@@ -10,8 +10,6 @@ const Herosection = () => {
   const [passlength, setPasslength] = useState(8);
   const [message, setMessage] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -55,9 +53,9 @@ const Herosection = () => {
   };
 
   return (
-    <div className="passhide-container">
+    <div className={styles["passhide-container"]}>
       <h1>Password Manager</h1>
-      <form className="passhide-form" onSubmit={handleSubmit}>
+      <form className={styles["passhide-form"]} onSubmit={handleSubmit}>
         <input
           type="text"
           name="title"
@@ -81,24 +79,24 @@ const Herosection = () => {
           value={uri}
           onChange={(e) => setUri(e.target.value)}
         />
-      <div className="showbtn">
-        <input
-          type={showPassword ? "text" : "password"}
-          name="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
+        <div className={styles.showbtn}>
+          <input
+            type={showPassword ? "text" : "password"}
+            name="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="btn toggle-btn"
+            className={`${styles.btn} ${styles["toggle-btn"]}`}
           >
             {showPassword ? "Hide" : "Show"}
           </button>
-          </div>
+        </div>
 
-        <div className="slider-container">
+        <div className={styles["slider-container"]}>
           <label>Length: {passlength}</label>
           <input
             type="range"
@@ -109,21 +107,21 @@ const Herosection = () => {
           />
         </div>
 
-        <div className="button-group">
+        <div className={styles["button-group"]}>
           <button
             type="button"
             onClick={generateRandomPassword}
-            className="btn generate-btn"
+            className={`${styles.btn} ${styles["generate-btn"]}`} 
           >
             Generate Random Password
           </button>
-          <button type="submit" className="btn save-btn">
+          <button type="submit" className={`${styles.btn} ${styles.saveBtn}`}>
             Save
           </button>
         </div>
       </form>
 
-      {message && <p className="message">{message}</p>}
+      {message && <p className={styles.message}>{message}</p>}
     </div>
   );
 };

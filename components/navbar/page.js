@@ -1,6 +1,6 @@
 "use client"
 import React from 'react'
-import './navbar.css'
+import styles from './navbar.module.css'
 import Link from 'next/link'
 
 const Navbar = () => {
@@ -12,15 +12,15 @@ const Navbar = () => {
 
   return (
     <>
-    <div className='container'>
-     <h2><Link className='logo' href={'/'}>Upass</Link></h2>
-     <div className='vault-logout'>
-     <Link  className ='vault' href={'/vault'}>Vault</Link>
-     <button onClick={handleLogout} className='logout'>Logout</button>
+    <div className={styles.container}>
+     <h2><Link className={styles.logo} href={'/'}>Upass</Link></h2>
+     <div className={styles['vault-logout']}>
+     <Link  className ={styles.vault} href={'/vault'}>Vault</Link>
+     <button onClick={handleLogout} className={styles.logout}>Logout</button>
      </div>
     </div>
     </>
   )
 }
 
-export default Navbar
+export default Navbar;
