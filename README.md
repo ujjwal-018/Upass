@@ -11,13 +11,13 @@ A secure and simple web application to store and manage your passwords safely. B
 - 🕵️ Search functionality (search vault items by any field)  
 - 👁️ Password hide/show toggle  
 - 💾 Secure storage using MongoDB  
-- 🧩 Responsive and clean UI with Tailwind CSS  
+- 🧩 Responsive and clean UI with CSS  
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Frontend:** Next.js 14, React, Tailwind CSS  
+- **Frontend:** Next.js 14, React
 - **Backend:** Next.js API Routes  
 - **Database:** MongoDB (Mongoose ORM)  
 - **Authentication:** JWT (JSON Web Token)  
