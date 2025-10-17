@@ -12,34 +12,48 @@ const Herosection = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const res = await fetch("/api/vault", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify({ title, username, uri, password }),
-      });
-
-      if (res.ok) {
-        setMessage("Item added successfully ✅");
-        setTitle("");
-        setUsername("");
-        setUri("");
-        setPassword("");
-      } else {
-        const errorData = await res.json();
-        setMessage(
-          `Failed to save ❌ - ${errorData?.error || "Unknown error"}`
-        );
-      }
-    } catch (error) {
-      console.error(error);
-      setMessage("An error occurred ❌");
+  e.preventDefault();
+  try {
+    const token = localStorage.getItem("token");
+    if (!token) {
+      alert("Please log in first!");
+      window.location.href = "/login";
+      return;
     }
-  };
+
+    const res = await fetch("/api/vault", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ title, username, uri, password }),
+    });
+
+    if (res.status === 401) {
+      // Token expired or invalid
+      alert("Session expired. Logging out...");
+      localStorage.removeItem("token");
+      window.location.href = "/login";
+      return;
+    }
+
+    if (res.ok) {
+      setMessage("Item added successfully ✅");
+      setTitle("");
+      setUsername("");
+      setUri("");
+      setPassword("");
+    } else {
+      const errorData = await res.json();
+      setMessage(`Failed to save ❌ - ${errorData?.error || "Unknown error"}`);
+    }
+  } catch (error) {
+    console.error(error);
+    setMessage("An error occurred ❌");
+  }
+};
+
 
   const generateRandomPassword = () => {
     const mixpass =

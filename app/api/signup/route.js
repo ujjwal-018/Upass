@@ -27,7 +27,7 @@ export async function POST(req) {
     const newUser = await User.create({ email, password: hashedPassword });
 
     // ✅ Use newUser.email instead of user.email
-    const token = jwt.sign({ email: newUser.email }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ email: newUser.email }, process.env.JWT_SECRET, { expiresIn: "7d" });
 
     return Response.json({ message: "User registered successfully", token }, { status: 201 });
   } catch (error) {

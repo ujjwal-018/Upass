@@ -21,7 +21,7 @@ export async function POST(req) {
     if (!valid) {
       return Response.json({ error: "Invalid password" }, { status: 401 });
     }
-    const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "1h" });
+    const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "7d" });
     return Response.json({ message: "Login successful", token }, { status: 200 });
   } catch (error) {
     return Response.json({ error: error.message }, { status: 500 });
