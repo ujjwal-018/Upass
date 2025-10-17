@@ -32,21 +32,18 @@ export async function POST(req) {
 
     const { title, username, uri, password } = await req.json();
 
-    if (!title || !username || !uri || !password) {
+    if (!password || !title) {
       return NextResponse.json(
-        { error: "All fields are required" },
+        { error: "At least Title and Password are required" },
         { status: 400 }
       );
     }
-
-    const salt = await bcrypt.genSalt(10);
-    const hashedPassword = await bcrypt.hash(password, salt);
 
     const newVault = new Vault({
       title,
       username,
       uri,
-      password: hashedPassword,
+      password,
       userEmail,
     });
 

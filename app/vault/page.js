@@ -78,11 +78,11 @@ const Vault = () => {
           <table className="vault-table">
             <thead>
               <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Username</th>
-                <th>Password</th>
-                <th>Actions</th>
+                <th>TITLE</th>
+                <th>USERNAME</th>
+                <th>URL</th>
+                <th>PASSWORD</th>
+                <th>ACTIONS</th>
               </tr>
             </thead>
             <tbody>
